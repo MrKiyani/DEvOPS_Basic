@@ -36,4 +36,4 @@ jobs:
         run: npm test || echo "No tests found"
 
       - name: Print Message
-        run: echo "Finally, My First CI/CD Pipeline Successful!"
+        run: echo "CI Pipeline Successful!"
