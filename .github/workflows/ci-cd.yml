@@ -1,23 +1,14 @@
-name: CI/CD Pipeline
+name: Simple Pipeline
 
 on:
   push:
     branches:
-      - main  # Change this to the branch you want to trigger the workflow on
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # You can specify different operating systems or environments
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2  # This action checks out your repository's code
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2  # This action sets up Node.js environment
-
-      - name: Install Dependencies
-        run: npm install  # Replace with your specific dependency installation command
-
-      - name: Run Tests
-        run: npm test  # Replace with your specific test command
+      - name: Print Message
+        run: echo "Changes pushed to main branch!"
