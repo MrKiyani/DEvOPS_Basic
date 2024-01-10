@@ -1,4 +1,4 @@
-name: Simple Pipeline
+name: Extended Pipeline
 
 on:
   push:
@@ -10,5 +10,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Message
-        run: echo "Changes pushed to main branch!"
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # Fetch complete git history for accurate diffs
+
+      - name: Display repository files
+        run: ls -l
+
+      - name: Show current directory
+        run: pwd
+
+      - name: Display Git branch
+        run: git branch -a
+
+      - name: Print message
+        run: echo "Pipeline executed successfully!"
